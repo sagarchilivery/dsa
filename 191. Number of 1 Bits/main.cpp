@@ -24,33 +24,46 @@
 using namespace std;
 
 // Approach 1 ->Brute force
+// int main()
+// {
+//     int num = 1234;
+//     vector<int> arr;
+
+//     while (num != 0)
+//     {
+//         arr.push_back(num % 2);
+//         num = num / 2;
+//     }
+
+//     cout << "Before reverse -> ";
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout << arr[i];
+//     }
+
+//     cout << endl;
+//     cout << "After reverse  -> ";
+
+//     reverse(arr.begin(), arr.end());
+//     int count = 0;
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         arr[i] == 1 && ++count;
+//         cout << arr[i];
+//     }
+//     cout << endl
+//          << "Count -> " << count;
+// }
+
+// Approach 2 -> Much better approach
 int main()
 {
-    int num = 1234;
-    vector<int> arr;
-
-    while (num != 0)
-    {
-        arr.push_back(num % 2);
-        num = num / 2;
-    }
-
-    cout << "Before reverse -> ";
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout << arr[i];
-    }
-
-    cout << endl;
-    cout << "After reverse  -> ";
-
-    reverse(arr.begin(), arr.end());
+    int n = 1234;
     int count = 0;
-    for (int i = 0; i < arr.size(); i++)
+    while (n != 0)
     {
-        arr[i] == 1 && ++count;
-        cout << arr[i];
+        (n % 2 & 1) && count++;
+        n = n >> 1;
     }
-    cout << endl
-         << "Count -> " << count;
+    cout << "Count -> " << count;
 }
