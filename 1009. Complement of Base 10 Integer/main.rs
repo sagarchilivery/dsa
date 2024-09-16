@@ -19,17 +19,27 @@ fn main() {
         }
     };
 
-    let mut mask: i32 = 0;
-    let mut m: i32 = num;
+    // // Aproach 1
+    // let mut mask: i32 = 0;
+    // let mut m: i32 = num;
+
+    // if num == 0 {
+    //     println!("Ans -> {:?}", 1);
+    // }
+
+    // while m != 0 {
+    //     mask = (mask << 1) | 1;
+    //     m >>= 1;
+    // }
+
+    // println!("Ans -> {:?}", !num & mask);
 
     if num == 0 {
         println!("Ans -> {:?}", 1);
+    } else {
+        println!(
+            "Ans -> {:?}",
+            num ^ ((1 << (32 - num.leading_zeros() as u32)) - 1)
+        );
     }
-
-    while m != 0 {
-        mask = (mask << 1) | 1;
-        m >>= 1;
-    }
-
-    println!("Ans -> {:?}", !num & mask);
 }
