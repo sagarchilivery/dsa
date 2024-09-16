@@ -28,25 +28,10 @@ int main()
 
     while (num != 0)
     {
-        arr.push_back(num % 2);
+        arr.push_back(num % 2 == 1 ? 0 : 1);
         num >>= 1;
     }
 
-    cout << "Before complement ->";
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout << arr[i];
-    }
-
-    cout << endl;
-    cout << "After complement ->";
-    for (int i = 0; i < arr.size(); i++)
-    {
-        arr[i] == 1 ? arr[i] = 0 : arr[i] = 1;
-        cout << arr[i];
-    }
-
-    // Decimal conversion
     for (int i = 0; i < arr.size(); i++)
     {
         decimal = decimal + (arr[i] << i);
