@@ -24,13 +24,23 @@ int main()
     cin >> num;
     bool found = false;
 
+    int ans = 0;
+
     for (int i = 0; i <= 30; i++)
     {
-        int power = pow(2, i);
-        if (num == power)
+        // int power = pow(2, i);
+        // if (num == power)
+        // {
+        //     found = true;
+        // }
+
+        if (ans == num)
         {
             found = true;
+            break;
         }
+
+        ans = ans + (2 * i);
     }
 
     if (found)
