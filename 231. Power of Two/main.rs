@@ -19,11 +19,20 @@ fn main() {
     // let ans: i32 = 1;
     let mut flag: bool = false;
 
+    let mut ans = 0;
+
     for i in 0..31 {
-        if 2_i32.pow(i) == num {
+        // if 2_i32.pow(i) == num {
+        //     flag = true;
+        //     break;
+        // }
+        // if(ans)
+
+        if (ans == num) {
             flag = true;
             break;
         }
+        ans = ans + (2 * i);
     }
 
     match flag {
