@@ -21,7 +21,7 @@ using namespace std;
 
 int main()
 {
-    string input = "LVIII";
+    string input = "MCDLXXVI";
     int count = 0;
 
     for (int i = 0; i < input.size(); i++)
@@ -66,7 +66,7 @@ int main()
             if (i != input.size() - 1 && (input[i + 1] == 'D' || input[i + 1] == 'M'))
             {
 
-                count = input[i + 1] == 'C' ? count + 400 : count + 900;
+                count = input[i + 1] == 'D' ? count + 400 : count + 900;
                 i++;
             }
             else
