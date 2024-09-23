@@ -3,20 +3,29 @@
 
 using namespace std;
 
-int main()
+int search_via_binary(vector<int> arr)
 {
-    vector<int> arr = {0, 1, 2, 10, 5, 2};
-    int temp = 0;
-    int index = -1;
+    int start = 0;
+    int end = arr.size() - 1;
 
-    for (int i = 0; i <= arr.size(); i++)
+    while (start < end)
     {
-        if (temp < arr[i])
+        int mid = start + (end - start) / 2;
+        if (arr[mid] < arr[mid + 1])
         {
-            temp = arr[i];
-            index = i;
+            start = mid + 1;
+        }
+        else
+        {
+            end = mid;
         }
     }
+    return start;
+}
 
-    cout << "The highest value is at -> " << index;
+int main()
+{
+    vector<int> arr = {0, 1, 2, 3, 10, 5, 2};
+
+    cout << "The highest value is at -> " << search_via_binary(arr);
 }
