@@ -21,16 +21,31 @@ using namespace std;
 int main()
 {
     vector<int> nums = {9, 6, 4, 2, 3, 5, 7, 0, 1};
-    int n = nums.size();
-    int relative_sum = 0;
-    int total_sum = n * (n + 1) / 2;
-    int i = 0;
+    int start = 0;
+    int end = nums.size();
 
-    while (i < n)
+    while (start <= end)
     {
-        relative_sum += nums[i];
-        i++;
+        int mid = start + (end - start) / 2;
+        int count = 0;
+
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (nums[i] <= mid)
+            {
+                count++;
+            }
+        }
+
+        if (count > mid)
+        {
+            start = mid + 1;
+        }
+        else
+        {
+            end = mid - 1;
+        }
     }
 
-    cout << "The Number which was missing is -> " << total_sum - relative_sum;
+    cout << "The Number which was missing is -> " << start;
 }
