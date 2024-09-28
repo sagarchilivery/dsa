@@ -11,42 +11,66 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <set>
+#include <unordered_set>
 
 using namespace std;
+
+// int main()
+// {
+//     vector<int> nums1 = {4, 9, 5};
+//     vector<int> nums2 = {9, 4, 9, 8, 4};
+//     sort(nums1.begin(), nums1.end());
+//     sort(nums2.begin(), nums2.end());
+//     int n = nums1.size();
+//     int m = nums2.size();
+//     int i = 0, j = 0;
+
+//     unordered_set<int> st;
+
+//     while (i < n && j < m)
+//     {
+//         if (nums1[i] == nums2[j])
+//         {
+//             st.insert(nums1[i]);
+//             i++;
+//             j++;
+//         }
+//         else if (nums1[i] > nums2[j])
+//         {
+//             j++;
+//         }
+//         else
+//         {
+//             i++;
+//         }
+//     }
+
+//     for (int item : st)
+//     {
+//         cout << "Item -> " << item << endl;
+//     }
+// }
+
+// Approach 2-> Efficent way
 
 int main()
 {
     vector<int> nums1 = {4, 9, 5};
     vector<int> nums2 = {9, 4, 9, 8, 4};
-    sort(nums1.begin(), nums1.end());
-    sort(nums2.begin(), nums2.end());
-    int n = nums1.size();
-    int m = nums2.size();
-    int i = 0, j = 0;
 
-    set<int> st;
+    unordered_set<int> set1(nums1.begin(), nums1.end());
+    unordered_set<int> result;
 
-    while (i < n && j < m)
+    for (int item : nums2)
     {
-        if (nums1[i] == nums2[j])
+        if (set1.find(item) != set1.end())
         {
-            st.insert(nums1[i]);
-            i++;
-            j++;
-        }
-        else if (nums1[i] > nums2[j])
-        {
-            j++;
-        }
-        else
-        {
-            i++;
+            result.insert(item);
         }
     }
 
-    for (int item : st)
+    for (int i : result)
     {
-        cout << "Item -> " << item << endl;
+        cout << "The intersecting elements are => " << i << endl;
     }
 }
