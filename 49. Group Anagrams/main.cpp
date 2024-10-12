@@ -28,23 +28,63 @@
 
 using namespace std;
 
+// Approach 1
+// int main()
+// {
+//     vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+//     unordered_map<string, vector<string>> hashmap;
+
+//     vector<vector<string>> result;
+
+//     for (string text : strs)
+//     {
+//         string temp = text;
+//         sort(text.begin(), text.end());
+//         hashmap[text].push_back(temp);
+//     }
+
+//     for (auto itr = hashmap.begin(); itr != hashmap.end(); itr++)
+//     {
+//         result.push_back(itr->second);
+//     }
+
+//     for (auto yo : result)
+//     {
+//         for (auto yoo : yo)
+//         {
+//             cout << yoo << endl;
+//         }
+//     }
+// }
+
+// Approach 2
+
 int main()
 {
-    vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
     unordered_map<string, vector<string>> hashmap;
-
     vector<vector<string>> result;
+    vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
 
     for (string text : strs)
     {
-        string temp = text;
-        sort(text.begin(), text.end());
-        hashmap[text].push_back(temp);
+        vector<int> charCount(26, 0);
+        for (char letter : text)
+        {
+            charCount[letter - 'a']++;
+        }
+
+        string key = "";
+        for (int count : charCount)
+        {
+            key += "#" + to_string(count);
+        }
+
+        hashmap[key].push_back(text);
     }
 
-    for (auto itr = hashmap.begin(); itr != hashmap.end(); itr++)
+    for (auto &[key, value] : hashmap)
     {
-        result.push_back(itr->second);
+        result.push_back(value);
     }
 
     for (auto yo : result)
