@@ -60,6 +60,13 @@
   "files.associations": {
     "numeric": "cpp",
     "vector": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "iterator": "cpp",
+    "string_view": "cpp"
   }
 }
