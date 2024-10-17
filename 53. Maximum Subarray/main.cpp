@@ -29,15 +29,31 @@ int main()
 {
     vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
 
+    // Approach 1
+    // int maxi = nums[0];
+    // for (int i = 0; i < nums.size(); i++)
+    // {
+    //     int current_sum = 0;
+    //     for (int j = i; j < nums.size(); j++)
+    //     {
+    //         current_sum = current_sum + nums[j];
+    //         maxi = max(current_sum, maxi);
+    //     }
+    // }
+    // cout << "Maximum sub array sum is -> " << maxi << endl;
+
+    // Approach 2
     int maxi = nums[0];
+    int sum = 0;
 
     for (int i = 0; i < nums.size(); i++)
     {
-        int current_sum = 0;
-        for (int j = i; j < nums.size(); j++)
+        sum += nums[i];
+        maxi = max(sum, maxi);
+
+        if (sum < 0)
         {
-            current_sum = current_sum + nums[j];
-            maxi = max(current_sum, maxi);
+            sum = 0;
         }
     }
 
