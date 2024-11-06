@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/OmniEx/Desktop/codeArena/dsa/two_sum",
-      "program": "c:/Users/OmniEx/Desktop/codeArena/dsa/two_sum/build/Debug/outDebug",
+      "cwd": "c:/Users/pc/Desktop/code-arena/dsa/164. Maximum Gap",
+      "program": "c:/Users/pc/Desktop/code-arena/dsa/164. Maximum Gap/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
