@@ -61,7 +61,9 @@ int main()
         if (bucket.empty())
             continue;
 
-        int current_bucket_max = bucket[0], current_bucket_min = bucket[0];
+        // int current_bucket_max = bucket[0], current_bucket_min = bucket[0];
+        int current_bucket_max = previous_bucket_max ? previous_bucket_max : bucket[0], current_bucket_min = bucket[0];
+
         for (int num : bucket)
         {
             current_bucket_max = max(current_bucket_max, num);
